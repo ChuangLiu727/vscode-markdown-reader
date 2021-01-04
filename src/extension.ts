@@ -20,16 +20,12 @@ export function activate(context: vscode.ExtensionContext) {
 		vscode.window.showInformationMessage('Hello World from markdown-reader!');
 	});
 
-	context.subscriptions.push(disposable);
-
 	let disposable2 = vscode.commands.registerCommand('markdown-reader.getCurrentFilePath', (uri) => {
 		// The code you place here will be executed every time your command is executed
 
 		// Display a message box to the user
 		vscode.window.showInformationMessage(`当前文件(夹)路径是：${uri ? uri.path : '空'}`);
 	});
-
-	context.subscriptions.push(disposable2);
 
 	let disposable3 = vscode.commands.registerTextEditorCommand('markdown-reader.testEditorCommand', (textEditor, edit) => {
 		// The code you place here will be executed every time your command is executed
@@ -39,7 +35,7 @@ export function activate(context: vscode.ExtensionContext) {
     	console.log(textEditor, edit);
 	});
 
-	context.subscriptions.push(disposable3);
+	context.subscriptions.push(disposable, disposable2, disposable3);
 }
 
 /**
@@ -47,5 +43,5 @@ export function activate(context: vscode.ExtensionContext) {
  */
 // this method is called when your extension is deactivated
 export function deactivate() {
-	console.log('您的扩展“vscode-plugin-demo”已被释放！')
+	console.log('您的扩展“vscode-plugin-demo”已被释放！');
 }

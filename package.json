@@ -11,7 +11,6 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onLanguage:markdown",
 		"onCommand:markdown-reader.helloWorld",
 		"onCommand:markdown-reader.getCurrentFilePath",
 		"onCommand:markdown-reader.testEditorCommand"
@@ -32,7 +31,6 @@
 				"title": "编辑"
 			}
 		],
-		// 快捷键绑定
         "keybindings": [
             {
                 "command": "markdown-reader.helloWorld",
@@ -47,7 +45,7 @@
                     "when": "editorFocus",
                     "command": "markdown-reader.helloWorld",
                     "group": "navigation"
-                }
+				},
             ],
             "explorer/context": [
                 {
